@@ -32,11 +32,11 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-22.04
-
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-
+      with:
+        tags: v34.10.0
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
