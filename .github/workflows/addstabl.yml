@@ -41,6 +41,9 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
+        - name: Increase Git buffer size
+          run: |
+            git config --global http.postBuffer 524288000
 
     - name: Clone source code
       working-directory: /workdir
