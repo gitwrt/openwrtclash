@@ -1,17 +1,4 @@
- steps:
-
-      - name: Set up OpenWrt SDK
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential libncurses5-dev libncursesw5-dev zlib1g-dev gawk git gettext libssl-dev xsltproc rsync wget unzip python3
-
-      - name: Download OpenWrt source code
-        run: |
-          git clone https://github.com/openwrt/openwrt.git
-          cd openwrt
-          git checkout $(git tag | grep -E '^v[0-9]+\.[0-9]+$' | sort -V | tail -n 1) # Checkout the latest stable version
-
-#
+#diy auto choose lastes version
 # https://github.com/P3TERX/Actions-OpenWrt
 
 name: OpenWrt FclashSTab
